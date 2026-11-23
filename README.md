@@ -6,6 +6,17 @@ Una skill para tu herramienta de desarrollo, con un script que saca la autoría 
 
 ---
 
+## En resumen
+
+Esta skill deja el proyecto documentado en una rama aparte de tu Git y lo mantiene al día con cada commit que apruebas.
+
+- **Al abrir un proyecto**, comprueba si ya está documentado. Si lo está, lee esa documentación y sabe de qué trata sin que se lo expliques. Si no, lo documenta una sola vez.
+- **Genera una página HTML con buscador** que abres con doble clic: cada módulo explicado completo, quién lo hizo, qué cambió y por qué, los flujos y las versiones anteriores.
+- **Incluye un índice en texto** para que cualquier herramienta entienda el proyecto sin recorrer el código fuente.
+- **Subir la rama o dejarla solo en tu equipo lo decides tú.** No hace commit ni push sin tu permiso.
+
+El resto de esta guía es el detalle de cada parte.
+
 ## Para qué fue creada
 
 Esta skill fue creada **para la comunidad**. Casi todos los proyectos llegan a un punto en que nadie sabe cómo funcionan por dentro, ni quién hizo qué. El que llega nuevo tarda semanas en entenderlo, y el documento que alguien escribió una vez ya quedó viejo. Aquí la documentación se genera desde el código y se actualiza cada vez que haces una actividad, sin que nadie tenga que acordarse.
