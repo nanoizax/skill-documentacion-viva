@@ -1,0 +1,77 @@
+:root{--bg:#fafaf8;--fg:#1d1d1b;--mut:#66665f;--card:#fff;--bor:#e3e2dc;--ac:#1f6f5c;--ac2:#e8f3ef;--wa:#8a5a00;--wa2:#fff4dc}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecece6;--mut:#a3a39a;--card:#1f1f1c;--bor:#34342f;--ac:#5cc4a8;--ac2:#1b2e29;--wa:#f0c36a;--wa2:#33290f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header,main,footer{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding-top:36px}
+h1{font-size:2rem;margin:0 0 6px}
+h2{font-size:1.35rem;margin:44px 0 14px;border-bottom:1px solid var(--bor);padding-bottom:8px}
+h3{margin:0 0 6px;font-size:1.1rem}
+h4{margin:0 0 4px;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+[id]{scroll-margin-top:84px}
+.oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* barra con menú y buscador */
+nav.principal{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--bor);z-index:5}
+nav .barra{max-width:980px;margin:0 auto;padding:10px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav .enlaces{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:var(--ac);text-decoration:none;font-weight:600;font-size:.92rem}
+nav a:hover{text-decoration:underline}
+.busca{position:relative;flex:1;min-width:230px}
+.busca input{width:100%;padding:8px 12px;border:1px solid var(--bor);border-radius:8px;background:var(--card);color:var(--fg);font:inherit;font-size:.92rem}
+.busca input:focus{outline:2px solid var(--ac);outline-offset:1px}
+#resultados{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--bor);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);max-height:60vh;overflow:auto;padding:6px}
+#resultados[hidden]{display:none}
+#resultados ul{list-style:none;margin:0;padding:0}
+#resultados a{display:block;padding:8px 10px;border-radius:6px;color:var(--fg);font-weight:500}
+#resultados a:hover{background:var(--ac2);text-decoration:none}
+#resultados .tipo{display:inline-block;min-width:76px;font-size:.72rem;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.04em}
+#resultados .nota,#resultados .vacio{color:var(--mut);font-size:.88rem}
+#resultados .vacio{padding:8px 10px;margin:0}
+
+.res{color:var(--mut);margin:0 0 14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--ac2);color:var(--ac);border-radius:99px;padding:2px 10px;font-size:.85rem;font-weight:600}
+.estado{background:var(--card);border:1px solid var(--bor);border-left:4px solid var(--ac);border-radius:8px;padding:12px 16px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bor);border-radius:10px;padding:14px 16px}
+.card p{margin:6px 0}
+.mut{color:var(--mut);font-size:.9rem}
+code{background:var(--ac2);padding:1px 6px;border-radius:5px;font-size:.88rem}
+pre{background:var(--ac2);padding:12px 14px;border-radius:8px;overflow-x:auto;font-size:.88rem;line-height:1.5}
+.aviso{background:var(--wa2);color:var(--wa);border-radius:8px;padding:10px 14px;margin:12px 0}
+ul,ol{margin:6px 0;padding-left:22px}
+li{margin:3px 0}
+button.enlace{background:none;border:0;padding:0;margin-top:8px;color:var(--ac);font:inherit;font-weight:600;font-size:.9rem;cursor:pointer}
+button.enlace:hover{text-decoration:underline}
+
+/* ficha de cada módulo */
+nav.indice{display:flex;gap:8px 14px;flex-wrap:wrap;margin:0 0 18px}
+nav.indice a{background:var(--ac2);border-radius:99px;padding:3px 12px;font-size:.88rem}
+.modulo{background:var(--card);border:1px solid var(--bor);border-radius:12px;padding:20px 22px;margin:18px 0}
+.modulo h3{font-size:1.3rem}
+.ruta{margin:0 0 10px}
+.lead{font-size:1.04rem;margin:8px 0 14px}
+.sec{margin:16px 0}
+.sec p{margin:4px 0}
+.cambio{border-collapse:collapse;width:100%;font-size:.95rem}
+.cambio th{text-align:left;vertical-align:top;width:84px;padding:6px 10px 6px 0;color:var(--mut);font-weight:600}
+.cambio td{padding:6px 0;border-bottom:1px solid var(--bor)}
+.quien{background:var(--ac2);border-radius:8px;padding:12px 14px;margin:18px 0 10px}
+.quien p{margin:5px 0}
+.resaltado{outline:3px solid var(--ac);outline-offset:3px}
+
+details.vers{margin-top:14px;border-top:1px solid var(--bor);padding-top:10px}
+details.vers summary{cursor:pointer;color:var(--ac);font-weight:600;font-size:.95rem}
+.ver{border-left:3px solid var(--bor);padding:2px 0 2px 14px;margin:14px 0}
+.ver .lead{font-size:.98rem}
+
+.flujo{background:var(--card);border:1px solid var(--bor);border-radius:10px;padding:14px;margin:14px 0;overflow-x:auto}
+svg .vida{stroke:var(--bor);stroke-dasharray:4 4}
+svg .caja{fill:var(--ac2);stroke:var(--ac)}
+svg .cajat{fill:var(--fg);font:600 13px system-ui}
+svg .flecha{stroke:var(--ac);stroke-width:1.6;fill:none}
+svg .punta{fill:var(--ac)}
+svg .flujot{fill:var(--fg);font:13px system-ui}
+.hist{border-left:3px solid var(--bor);padding:2px 0 2px 14px;margin:14px 0}
+footer{color:var(--mut);font-size:.88rem;padding-bottom:50px;margin-top:40px}

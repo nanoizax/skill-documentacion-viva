@@ -1,0 +1,251 @@
+{
+  "flujos": [
+    "Comprar un producto",
+    "Buscar en el catálogo"
+  ],
+  "generado": {
+    "commit": "20978943ae31398a7978c8b993f3da7a980719cf",
+    "fecha": "2026-11-23",
+    "ref": "main"
+  },
+  "modulos": [
+    {
+      "archivos_clave": [
+        {
+          "para_que": "carga y ordena los productos",
+          "ruta": "src/catalogo/lista.py"
+        },
+        {
+          "para_que": "decide qué productos coinciden con lo que escribió el cliente",
+          "ruta": "src/catalogo/busqueda.py"
+        }
+      ],
+      "colaboradores": [],
+      "depende_de": [],
+      "ficha": "modulos/catalogo.md",
+      "id": "catalogo",
+      "nombre": "Catálogo",
+      "principal": "Lucía Fernández",
+      "que_es": "Es la lista de productos que el cliente puede comprar.",
+      "ruta": "src/catalogo",
+      "ultima_modificacion": {
+        "asunto": "Filtros por categoría",
+        "autor": "Lucía Fernández",
+        "fecha": "2026-10-01"
+      },
+      "verificado": true,
+      "versiones_anteriores": 0
+    },
+    {
+      "archivos_clave": [
+        {
+          "para_que": "guarda las líneas y las cantidades",
+          "ruta": "src/carrito/carrito.py"
+        },
+        {
+          "para_que": "calcula impuestos, redondeo y total",
+          "ruta": "src/carrito/totales.py"
+        }
+      ],
+      "colaboradores": [
+        "marcos"
+      ],
+      "depende_de": [
+        "catalogo"
+      ],
+      "ficha": "modulos/carrito.md",
+      "id": "carrito",
+      "nombre": "Carrito",
+      "principal": "Marcos Díaz",
+      "que_es": "Guarda lo que el cliente quiere comprar mientras sigue navegando.",
+      "ruta": "src/carrito",
+      "ultima_modificacion": {
+        "asunto": "Corrige redondeo del carrito",
+        "autor": "marcos",
+        "fecha": "2026-10-15"
+      },
+      "verificado": true,
+      "versiones_anteriores": 0
+    },
+    {
+      "archivos_clave": [
+        {
+          "para_que": "habla con la pasarela y define el tiempo máximo de espera",
+          "ruta": "src/pagos/pasarela.py"
+        },
+        {
+          "para_que": "repite el cobro cuando la pasarela no responde",
+          "ruta": "src/pagos/reintentos.py"
+        },
+        {
+          "para_que": "arma el recibo que ve el cliente",
+          "ruta": "src/pagos/recibo.py"
+        }
+      ],
+      "colaboradores": [
+        "Marcos Díaz"
+      ],
+      "depende_de": [
+        "carrito"
+      ],
+      "ficha": "modulos/pagos.md",
+      "id": "pagos",
+      "nombre": "Pagos",
+      "principal": "Sofía Ortega",
+      "que_es": "Cobra el total del carrito a través de la pasarela de pagos y entrega el recibo al cliente.",
+      "ruta": "src/pagos",
+      "ultima_modificacion": {
+        "asunto": "Ajusta el tiempo de espera de la pasarela",
+        "autor": "Marcos Díaz",
+        "fecha": "2026-10-28"
+      },
+      "verificado": false,
+      "versiones_anteriores": 1
+    },
+    {
+      "archivos_clave": [
+        {
+          "para_que": "entrega el siguiente número de factura",
+          "ruta": "src/facturas/numeracion.py"
+        },
+        {
+          "para_que": "construye el PDF y desglosa los impuestos",
+          "ruta": "src/facturas/generar.py"
+        },
+        {
+          "para_que": "envía la factura por correo",
+          "ruta": "src/facturas/envio.py"
+        }
+      ],
+      "colaboradores": [
+        "Marcos Díaz"
+      ],
+      "depende_de": [
+        "pagos"
+      ],
+      "ficha": "modulos/facturas.md",
+      "id": "facturas",
+      "nombre": "Facturas",
+      "principal": "Lucía Fernández",
+      "que_es": "Genera la factura en PDF de cada pedido pagado, con los impuestos desglosados línea por línea, y la envía por correo al cliente.",
+      "ruta": "src/facturas",
+      "ultima_modificacion": {
+        "asunto": "Desglosa los impuestos en la factura",
+        "autor": "Lucía Fernández",
+        "fecha": "2026-10-29"
+      },
+      "verificado": true,
+      "versiones_anteriores": 1
+    },
+    {
+      "archivos_clave": [
+        {
+          "para_que": "consulta y ordena los pedidos del cliente",
+          "ruta": "src/pedidos/historial.py"
+        }
+      ],
+      "colaboradores": [],
+      "depende_de": [
+        "pagos",
+        "facturas"
+      ],
+      "ficha": "modulos/pedidos.md",
+      "id": "pedidos",
+      "nombre": "Pedidos",
+      "principal": "Lucía Fernández",
+      "que_es": "Muestra al cliente el historial de lo que ya compró: qué pidió, cuándo, cuánto pagó y el estado de cada pedido.",
+      "ruta": "src/pedidos",
+      "ultima_modificacion": {
+        "asunto": "Merged PR 21: Historial de pedidos",
+        "autor": "Lucía Fernández",
+        "fecha": "2026-10-20"
+      },
+      "verificado": true,
+      "versiones_anteriores": 0
+    },
+    {
+      "archivos_clave": [
+        {
+          "para_que": "pantalla de inicio con el buscador",
+          "ruta": "src/web/inicio.py"
+        },
+        {
+          "para_que": "ficha de un producto",
+          "ruta": "src/web/producto.py"
+        },
+        {
+          "para_que": "pantalla del historial de pedidos",
+          "ruta": "src/web/pedidos.py"
+        }
+      ],
+      "colaboradores": [
+        "Lucía Fernández"
+      ],
+      "depende_de": [
+        "catalogo",
+        "carrito",
+        "pedidos"
+      ],
+      "ficha": "modulos/web.md",
+      "id": "web",
+      "nombre": "Pantallas web",
+      "principal": "Sofía Ortega",
+      "que_es": "Son las pantallas que ve el cliente: inicio, ficha de producto y pedidos.",
+      "ruta": "src/web",
+      "ultima_modificacion": {
+        "asunto": "Merged PR 21: Historial de pedidos",
+        "autor": "Lucía Fernández",
+        "fecha": "2026-10-20"
+      },
+      "verificado": true,
+      "versiones_anteriores": 0
+    }
+  ],
+  "personas": [
+    {
+      "commits": 5,
+      "nombre": "Lucía Fernández",
+      "principal_en": [
+        "Catálogo",
+        "Facturas",
+        "Pedidos"
+      ],
+      "ultima_actividad": "2026-10-29"
+    },
+    {
+      "commits": 4,
+      "nombre": "Marcos Díaz",
+      "principal_en": [
+        "Carrito"
+      ],
+      "ultima_actividad": "2026-10-28"
+    },
+    {
+      "commits": 3,
+      "nombre": "Sofía Ortega",
+      "principal_en": [
+        "Pagos",
+        "Pantallas web"
+      ],
+      "ultima_actividad": "2026-10-27"
+    },
+    {
+      "commits": 1,
+      "nombre": "marcos",
+      "principal_en": [],
+      "ultima_actividad": "2026-10-15"
+    }
+  ],
+  "proyecto": {
+    "nombre": "Tienda Demo",
+    "resumen": "Tienda en línea de ejemplo. El cliente busca productos en un catálogo, los guarda en un carrito, paga con tarjeta a través de una pasarela externa y recibe una factura en PDF por correo. Después puede consultar su historial de pedidos.",
+    "stack": [
+      "Python",
+      "HTML",
+      "Pasarela de pagos"
+    ]
+  },
+  "sin_verificar": [
+    "No se ejecutó el cobro real con la pasarela; solo se leyó el código del módulo de pagos."
+  ]
+}
